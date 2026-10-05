@@ -1,3 +1,4 @@
+const PORT = process.env.PORT || 5000;
 const http = require('http');
 const router = require('./modules/router.js');
 
@@ -12,6 +13,6 @@ const server = http.createServer((req, res) => {
     handler(req, res);
 });
 
-server.listen(5000, ()=>{
+server.listen(PORT, '0.0.0.0', ()=>{
     console.log('server running at port 5000');
 });
