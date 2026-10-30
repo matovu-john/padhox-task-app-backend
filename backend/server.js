@@ -10,7 +10,8 @@ const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, PATCH, POST, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    console.log(req.method, req.url);
+   // console.log(req.method, req.url);
+    console.log('The requested url is', req.url , 'and the method is', req.method);
 
     if (req.method === 'GET' && req.url === '/') {
         res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -23,5 +24,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, '0.0.0.0', ()=>{
-    console.log('server running at port 5000');
+    console.log('server running at port', PORT);
 });
